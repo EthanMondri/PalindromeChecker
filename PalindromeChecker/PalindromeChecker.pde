@@ -15,17 +15,13 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  String s = "";
-  for (int i = word.length()-1; i >= 0; i--)
-    s += word.substring(i, i+1);
-  return word.equals(s) ? true : false;
-}
-public String reverse(String str)
-{
+  String str = StrUtil.noCapitals(word);
+  str = StrUtil.onlyLetters(str);
+  
   String s = "";
   for (int i = str.length()-1; i >= 0; i--)
   {
     s += str.substring(i, i+1);
   }
-  return s;
+  return str.equals(s) ? true : false;
 }
